@@ -1,0 +1,350 @@
+<!Doctype html>
+<html>
+<head>
+	<title>3 en raya</title>
+<style type="text/css">
+	form{
+	background:#333333;
+	width:240px;
+	border: 1px solid #4E4D4D;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	box-shadow: inset 0px 0px 10px #000000;
+	margin:100px auto;
+}
+input{
+	width:70px;
+	height:70px;
+	padding: 0px 1px;
+	color:#6D6D6D;
+	text-align:center;
+	margin: 3px 3px;
+}
+#botones form input{
+	width:150px;
+}
+</style>
+</head>
+<body>
+<form id="tic">
+<input type="button" id="sqr1" onclick="cambiarsqr1()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px; ">
+<input type="button" id="sqr2" onclick="cambiarsqr2()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px">
+<input type="button" id="sqr3" onclick="cambiarsqr3()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px"><br />
+<input type="button" id="sqr4" onclick="cambiarsqr4()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px">
+<input type="button" id="sqr5" onclick="cambiarsqr5()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px">
+<input type="button" id="sqr6" onclick="cambiarsqr6()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px"><br />
+<input type="button" id="sqr7" onclick="cambiarsqr7()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px">
+<input type="button" id="sqr8" onclick="cambiarsqr8()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px">
+<input type="button" id="sqr9" onclick="cambiarsqr9()" value="" style="display: inline-block; width: 70px; height:70px; font-size: 70px">
+</form>
+<p id="botones"><form style="width: 295px"><input type="button" id="" value="Empezar la partida" style="width: 140px; display: inline-block;" onclick="empezar_partida()"><input type="button" id="" value="Reiniciar la partida" style="width: 140px;" onclick="empezar_partida()"></form>
+<script type="text/javascript">
+var sqr1c = 0
+var sqr1 = document.getElementById('sqr1')
+var sqr2c = 0
+var sqr2 = document.getElementById('sqr2')
+var sqr3c = 0
+var sqr3 = document.getElementById('sqr3')
+var sqr4c = 0
+var sqr4 = document.getElementById('sqr4')
+var sqr5c = 0
+var sqr5 = document.getElementById('sqr5')
+var sqr6c = 0
+var sqr6 = document.getElementById('sqr6')
+var sqr7c = 0
+var sqr7 = document.getElementById('sqr7')
+var sqr8c = 0
+var sqr8 = document.getElementById('sqr8')
+var sqr9c = 0
+var sqr9 = document.getElementById('sqr9')
+var acabado = 0
+var JugadorGanador = 0
+var Jugador1 = 0
+var Jugador2 = 0
+var Partidaempezada = 0
+var Turno = 0
+function empezar_partida(){
+	console.log("Empezar")
+	sqr1c = 0;
+	sqr1.value = ""
+	sqr2c = 0;
+	sqr2.value = ""
+	sqr3c = 0;
+	sqr3.value = ""
+	sqr4c = 0;
+	sqr4.value = ""
+	sqr5c = 0;
+	sqr5.value = ""
+	sqr6c = 0;
+	sqr6.value = ""
+	sqr7c = 0;
+	sqr7.value = ""
+	sqr8c = 0;
+	sqr8.value = ""
+	sqr9c = 0;
+	sqr9.value = ""
+	Jugador1 = prompt("Jugador 1")
+	Jugador2 = prompt("Jugador 2")
+	Partidaempezada=1
+	Turno = 0 //Jugador1 = 0 = X   Jugador2 = 1 = O
+}
+function cambiarsqr1(){
+	if (sqr1c == 0) {
+		if (Turno == 0) {
+			sqr1.value = "X"
+			sqr1c = 1
+			Turno = Turno+1;
+		} else {
+			sqr1.value = "O"
+			sqr1c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr2(){
+	if (sqr2c == 0) {
+		if (Turno == 0) {
+			sqr2.value = "X"
+			sqr2c = 1
+			Turno = Turno+1;
+		} else {
+			sqr2.value = "O"
+			sqr2c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr3(){
+	if (sqr3c == 0) {
+		if (Turno == 0) {
+			sqr3.value = "X"
+			sqr3c = 1
+			Turno = Turno+1;
+		} else {
+			sqr3.value = "O"
+			sqr3c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr4(){
+	if (sqr4c == 0) {
+		if (Turno == 0) {
+			sqr4.value = "X"
+			sqr4c = 1
+			Turno = Turno+1;
+		} else {
+			sqr4.value = "O"
+			sqr4c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr5(){
+	if (sqr5c == 0) {
+		if (Turno == 0) {
+			sqr5.value = "X"
+			sqr5c = 1
+			Turno = Turno+1;
+		} else {
+			sqr5.value = "O"
+			sqr5c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr6(){
+	if (sqr6c == 0) {
+		if (Turno == 0) {
+			sqr6.value = "X"
+			sqr6c = 1
+			Turno = Turno+1;
+		} else {
+			sqr6.value = "O"
+			sqr6c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr7(){
+	if (sqr7c == 0) {
+		if (Turno == 0) {
+			sqr7.value = "X"
+			sqr7c = 1
+			Turno = Turno+1;
+		} else {
+			sqr7.value = "O"
+			sqr7c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr8(){
+	if (sqr8c == 0) {
+		if (Turno == 0) {
+			sqr8.value = "X"
+			sqr8c = 1
+			Turno = Turno+1;
+		} else {
+			sqr8.value = "O"
+			sqr8c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function cambiarsqr9(){
+	if (sqr9c == 0) {
+		if (Turno == 0) {
+			sqr9.value = "X"
+			sqr9c = 1
+			Turno = Turno+1;
+		} else {
+			sqr9.value = "O"
+			sqr9c = 2
+			Turno = Turno-1;
+		}
+	} 
+	else {
+		alert("Esta casilla ya esta cogida por favor selecciona otra casilla")
+	}
+	comprobar();
+}
+function comprobar() {
+if(sqr1c == "1" && sqr2c == "1" && sqr3c == "1") 
+  { 
+    Partida_acabada(Jugador1);
+  } 
+  else if(sqr4c == "1" && sqr5c == "1" && sqr6c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+     
+  } 
+  else if(sqr7c == "1" && sqr8c == "1" && sqr9c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+  } 
+  else if(sqr1c == "1" && sqr5c == "1" && sqr9c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+  } 
+  else if(sqr1c == "1" && sqr4c == "1" && sqr7c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+     
+  } 
+  else if(sqr2c == "1" && sqr5c == "1" && sqr8c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+     
+  } 
+  else if(sqr3c == "1" && sqr6c == "1" && sqr9c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+     
+  } 
+  else if(sqr1c == "1" && sqr5c == "1" && sqr9c == "1") 
+  { 
+    Patida_acabada(Jugador1) 
+     
+  } 
+  else if(sqr3c == "1" && sqr5c == "1" && sqr7c == "1") 
+  { 
+    Partida_acabada(Jugador1) 
+     
+  } 
+  if(sqr1c == "2" && sqr2c == "2" && sqr3c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr4c == "2" && sqr5c == "2" && sqr6c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr7c == "2" && sqr8c == "2" && sqr9c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr1c == "2" && sqr5c == "2" && sqr9c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr1c == "2" && sqr4c == "2" && sqr7c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr2c == "2" && sqr5c == "2" && sqr8c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr3c == "2" && sqr6c == "2" && sqr9c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr1c == "2" && sqr5c == "2" && sqr9c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  } 
+  else if(sqr3c == "2" && sqr5c == "2" && sqr7c == "2") 
+  { 
+    Partida_acabada(Jugador2) 
+     
+  }
+  else if(sqr1c != "0" && sqr2c != "0" && sqr3c != "0" && sqr4c != "0" && sqr5c != "0" && sqr6c != "0" && sqr7c != "0" && sqr8c != "0" && sqr9c != "0"){
+  	Partidaempatada();
+  }
+}
+function Partidaempatada(){
+	var empatada = confirm("Habeis empetado ¿Quereis empezar otra partida?")
+	if (empatada==true) {
+		empezar_partida();
+	}
+	else{
+		return("false")
+	}
+}
+function Partida_acabada(Jugador) {
+	alert("Felicidades "+Jugador+" has ganado la partida");}
+</script>
+</body>
+</html>
